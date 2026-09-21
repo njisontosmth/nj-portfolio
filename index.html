@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NJ's interactive portfolio — business analytics, automation, content and curious experiments." />
+  <meta name="theme-color" content="#2b1f3d" />
+  <title>NJ — Ideas in Progress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="NJ home"><span class="brand-dot"></span>NJ</a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="lamp-toggle" type="button" aria-label="Toggle evening mode" title="Turn the desk lamp on or off"><span>☼</span></button>
+  </header>
+
+  <main>
+    <section id="home" class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="live-dot"></span> currently building in Birmingham</p>
+        <h1>Hi, I’m NJ.<br><em>I make ideas useful.</em></h1>
+        <p class="hero-lede">Business analytics graduate, systems thinker and curious creative exploring the space between data, content, AI and visual storytelling.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">Open my project drawer <span>↘</span></a>
+          <a class="button ghost" href="#about">Meet the human</a>
+        </div>
+        <p class="microcopy">Nothing here is frozen. This portfolio grows as I do.</p>
+      </div>
+
+      <div class="desk-scene reveal" aria-label="An illustrated cozy creative desk">
+        <div class="window-light"><i></i><i></i><i></i><span class="moon">✦</span></div>
+        <div class="wall-note note-one">make it<br><strong>useful</strong><span>♡</span></div>
+        <div class="wall-note note-two">ideas<br>in motion ✦</div>
+        <button class="scene-object desk-lamp" type="button" aria-label="Toggle desk light"><span class="shade"></span><span class="neck"></span><span class="base"></span><span class="glow"></span></button>
+        <div class="plant"><span class="leaf l1"></span><span class="leaf l2"></span><span class="leaf l3"></span><span class="pot"></span></div>
+        <img class="nj-character" src="assets/nj-illustrated-character.png" alt="Illustrated character portrait of NJ holding a lavender pencil at her desk" />
+        <button class="laptop scene-object" type="button" data-open="projects" aria-label="Open projects">
+          <span class="laptop-screen"><span class="screen-top">NJ_DESK</span><span class="screen-copy">What are we<br>making today?<b class="cursor"></b></span><span class="screen-icons"><i></i><i></i><i></i></span></span>
+          <span class="laptop-base"></span>
+        </button>
+        <button class="mug scene-object" type="button" data-open="about" aria-label="Open a note about NJ"><span class="steam s1"></span><span class="steam s2"></span><span class="mug-copy">NJ</span></button>
+        <div class="books"><span>DATA</span><span>STORY</span><span>IDEAS</span></div>
+        <div class="desk"><span class="drawer"></span><span class="knob"></span></div>
+        <p class="scene-hint">Psst — the desk is clickable.</p>
+      </div>
+    </section>
+
+    <section id="about" class="about section-shell section-pad">
+      <div class="section-heading reveal"><p class="eyebrow">01 / WHO IS NJ?</p><h2>A practical mind with<br><em>a very busy imagination.</em></h2></div>
+      <div class="about-grid">
+        <article class="about-card story-card reveal">
+          <span class="card-sticker">hello!</span>
+          <p>I’m Niranjana Vincent—usually NJ—a Mathematics and Business Analytics graduate who enjoys finding the thread between seemingly unrelated things.</p>
+          <p>I can be cleaning a dataset, mapping an automation, planning a content hook and imagining an animated world in the same afternoon. The common theme is curiosity: <strong>How could this work better—and feel more human?</strong></p>
+          <div class="signature">NJ <span>✦</span></div>
+        </article>
+        <div class="curiosity-board reveal">
+          <h3>Things that pull me in</h3>
+          <div class="curiosity-cloud">
+            <span>AI prompting</span><span>visual storytelling</span><span>fashion</span><span>useful systems</span><span>animation</span><span>creator strategy</span><span>human behaviour</span><span>data patterns</span>
+          </div>
+          <p class="board-note">The list keeps growing. That’s kind of the point.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects section-pad">
+      <div class="section-shell">
+        <div class="section-heading row-heading reveal">
+          <div><p class="eyebrow">02 / THE PROJECT DRAWER</p><h2>Work, experiments &<br><em>beautiful rabbit holes.</em></h2></div>
+          <p class="heading-note">Progress is shown honestly: shipped, growing, exploring or paused—not everything needs to pretend it is finished.</p>
+        </div>
+        <div class="filter-row reveal" role="group" aria-label="Filter projects">
+          <button class="filter active" data-filter="all">All <span>8</span></button>
+          <button class="filter" data-filter="systems">Systems</button>
+          <button class="filter" data-filter="creative">Creative</button>
+          <button class="filter" data-filter="data">Data</button>
+          <button class="filter" data-filter="ai">AI</button>
+        </div>
+        <div id="projectGrid" class="project-grid"></div>
+      </div>
+    </section>
+
+    <section id="experience" class="experience section-shell section-pad">
+      <div class="section-heading reveal"><p class="eyebrow">03 / EXPERIENCE</p><h2>Different rooms,<br><em>transferable instincts.</em></h2></div>
+      <div class="timeline reveal">
+        <article><span class="timeline-icon">◫</span><div><p class="timeline-type">GREEN HYPERMARKET · PRICING + DATA</p><h3>Pricing Assistant / Data Entry Assistant</h3><p>Maintained and corrected pricing information for more than 10,000 products using Excel, Dynamics 365 and Stockade SQL; produced barcode labels and helped train new team members.</p><div class="tag-row"><span>Excel · Dynamics 365 · SQL · data quality</span><span>Accuracy · ownership · training</span></div></div></article>
+        <article><span class="timeline-icon">⌁</span><div><p class="timeline-type">SMART MAINTENANCE SOLUTIONS · BUSINESS ANALYSIS</p><h3>Business Analyst Intern</h3><p>Researched and mapped workflows, documented and presented findings, and created an AI-assisted chatbot that worked with GoHighLevel CRM to book appointments.</p><div class="tag-row"><span>GoHighLevel · Make · Zapier · AI prompting</span><span>Research · communication · problem solving</span></div></div></article>
+        <article><span class="timeline-icon">✎</span><div><p class="timeline-type">ASTON UNIVERSITY · ACCESSIBILITY</p><h3>Academic Note Taker</h3><p>Produced clear, structured and accessible notes from university teaching, turning fast-moving information into organised written material.</p><div class="tag-row"><span>Structured documentation · summarising</span><span>Active listening · discretion · reliability</span></div></div></article>
+        <article><span class="timeline-icon">♡</span><div><p class="timeline-type">SSP / M&amp;S FOOD · RETAIL + HOSPITALITY</p><h3>Customer-Facing Team Member</h3><p>Supported customers in fast-paced food and retail environments while balancing tills, stock presentation, service standards and changing priorities.</p><div class="tag-row"><span>POS systems · stock handling · service standards</span><span>Composure · teamwork · customer care</span></div></div></article>
+        <article><span class="timeline-icon">✦</span><div><p class="timeline-type">CONTENT + CREATIVE</p><h3>Independent Creator & UGC Work</h3><p>Concepting, filming and editing short-form beauty and lifestyle content while learning hooks, visual pacing, SEO and brand communication.</p><div class="tag-row"><span>CapCut · Canva · DaVinci Resolve</span><span>Creative judgement · adaptability · initiative</span></div></div></article>
+      </div>
+      <div class="education-strip reveal">
+        <div><span>2024</span><strong>MSc Business Analytics</strong><small>Aston University</small></div>
+        <i></i>
+        <div><span>FOUNDATION</span><strong>BSc Mathematics</strong><small>Analytical thinking & problem solving</small></div>
+      </div>
+    </section>
+
+    <section class="skills section-pad">
+      <div class="section-shell skills-layout">
+        <div class="section-heading reveal"><p class="eyebrow">04 / TOOLBOX</p><h2>Skills I use,<br><em>skills I’m stretching.</em></h2><p class="skill-note">I care less about collecting software names and more about choosing the right tool for the problem.</p></div>
+        <div class="skill-shelves reveal">
+          <div><h3>Analyse</h3><p><span>Excel</span><span>Python basics</span><span>SQL</span><span>Forecasting</span><span>KPIs</span></p></div>
+          <div><h3>Build</h3><p><span>Process mapping</span><span>Make</span><span>Zapier</span><span>Prompting</span><span>Automation</span></p></div>
+          <div><h3>Create</h3><p><span>Canva</span><span>CapCut</span><span>DaVinci Resolve</span><span>Content strategy</span><span>Visual design</span></p></div>
+          <div><h3>Learning now</h3><p><span>Blender</span><span>3D animation</span><span>Web building</span><span>Generative video</span></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section-shell section-pad reveal">
+      <div class="contact-card">
+        <p class="eyebrow">05 / SAY HELLO</p>
+        <h2>Have a thoughtful problem,<br><em>a strange idea or a good opportunity?</em></h2>
+        <p>I’m interested in business analysis, operations, creative strategy and projects where organised thinking meets imagination.</p>
+        <div class="contact-actions"><a class="button primary" href="mailto:niranjanavnt@gmail.com">Email NJ</a><a class="button ghost" href="https://www.linkedin.com/in/niranjana-vincent/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a class="button ghost" href="https://github.com/njisontosmth" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+        <small>Built with curiosity, too many open tabs and a cup of something warm.</small>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>NJ © <b id="year"></b></span><span>Ideas in progress <i>✦</i></span></footer>
+
+  <dialog id="projectDialog" class="project-dialog"><button class="dialog-close" aria-label="Close">×</button><div id="dialogContent"></div></dialog>
+  <dialog id="noteDialog" class="note-dialog"><button class="dialog-close" aria-label="Close">×</button><div><p class="eyebrow">A NOTE FROM THE DESK</p><h2>I’m not one neat job title.</h2><p>I’m at my best where analysis, organisation and creative curiosity overlap. This space is a record of me following those connections—and turning them into things you can actually see and use.</p><span class="signature">— NJ ✦</span></div></dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
