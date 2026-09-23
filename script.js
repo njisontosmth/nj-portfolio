@@ -6,7 +6,7 @@ const projects = [
   {id:"editor",title:"NJ Studio Editor",category:["creative","systems","ai"],label:"PRODUCT CONCEPT",status:"CONCEPT",progress:28,color:"#7f93c8",symbol:"▶",summary:"A colourful, accessible video-editor concept for scroll-stopping creative work without tool overload.",now:"Defining the feature set, experience and a realistic first prototype.",learned:"Product scoping, user needs, feature prioritisation and interface direction.",tools:"Product thinking, UI concepts, prompting"},
   {id:"forecasting",title:"Forecasting with Python",category:["data"],label:"ANALYTICS · ACADEMIC",status:"CASE STUDY READY",progress:100,color:"#89a98e",symbol:"↗",summary:"MSc dissertation work using Python to explore forecasting—turning historical patterns into evidence-led expectations.",now:"Translating the academic work into a concise, visual portfolio case study.",learned:"Data preparation, forecasting logic, evaluation and communicating limitations.",tools:"Python, pandas, forecasting methods, data visualisation"},
   {id:"automation",title:"AI Appointment Booking Chatbot",category:["systems","ai"],label:"BUSINESS ANALYSIS · INTERNSHIP",status:"COMPLETED",progress:100,color:"#db8c9a",symbol:"⌁",summary:"An AI-assisted chatbot created during my internship to work with GoHighLevel CRM and guide users through booking an appointment.",now:"The internship deliverable is complete; the next step is documenting the workflow as a public case study without exposing company information.",learned:"Translating a business need into conversation logic, CRM actions and a testable automated workflow.",tools:"GoHighLevel CRM, Make, Zapier, OpenAI prompting, workflow mapping"},
-  {id:"kaggriculture",title:"Kaggriculture — Autonomous AI Farming Agent",category:["data","ai","systems"],label:"KAGGLE · AGENTIC AI · STRATEGY",status:"IN PROGRESS",progress:72,color:"#baa57d",symbol:"✧",summary:"A live Kaggle competition project where I am iteratively building an autonomous Python agent that manages crops, livestock, land, labour and market decisions while reacting to an opponent.",now:"Testing and comparing multiple agent versions on the live leaderboard, using replay analysis to improve expansion, production economics, opponent awareness and end-game profit.",learned:"Agent design, decision systems, optimisation, market simulation, replay-based debugging and iterative strategy development.",tools:"Python, Kaggle, agent design, optimisation, market simulation",links:[{label:"View my Kaggle profile",url:"https://www.kaggle.com/nj54425"}]}
+  {id:"kaggriculture",title:"Kaggriculture — Autonomous AI Farming Agent",category:["data","ai","systems"],label:"KAGGLE · AGENTIC AI · STRATEGY",status:"IN PROGRESS",progress:72,color:"#baa57d",symbol:"✧",summary:"A live Kaggle simulation project: I designed and tested five Python farming agents, then adopted an attributed Apache-2.0 public strategy as a stronger benchmark for the final improvement sprint.",now:"Analysing match replays and testing targeted changes to expansion, production economics, opponent awareness and end-game profit. Benchmark snapshot on 23 September 2026: score 1,035.6 and rank 3,874, with ratings still moving.",learned:"AI-assisted agent development, decision systems, optimisation, replay-based debugging, experimental comparison and responsible open-source attribution.",tools:"Python, Kaggle, ChatGPT-assisted development, agent design, market simulation",links:[{label:"View my Kaggle profile",url:"https://www.kaggle.com/nj54425"},{label:"Open the competition",url:"https://www.kaggle.com/competitions/kaggriculture"}]}
 ];
 
 const grid=document.querySelector("#projectGrid");
@@ -17,7 +17,16 @@ function renderProjects(filter="all"){
     <h3>${p.title}</h3><p>${p.summary}</p>
     <div class="progress-wrap"><div class="progress-label"><span>PROJECT PROGRESS</span><span>${p.progress}%</span></div><div class="progress-track"><i style="width:${p.progress}%;--accent:${p.color}"></i></div></div>
   </article>`).join("");
-  document.querySelectorAll(".project-card").forEach(card=>{card.addEventListener("click",()=>openProject(card.dataset.id));card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openProject(card.dataset.id)}})});
+  document.querySelectorAll(".project-card").forEach(card=>{
+    card.addEventListener("click",()=>openProject(card.dataset.id));
+    card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openProject(card.dataset.id)}});
+    const cardObserver=new IntersectionObserver(([entry],observer)=>{if(entry.isIntersecting){card.classList.add("card-visible");observer.disconnect()}},{threshold:.2});
+    cardObserver.observe(card);
+    if(window.matchMedia("(hover:hover) and (prefers-reduced-motion:no-preference)").matches){
+      card.addEventListener("pointermove",e=>{const r=card.getBoundingClientRect();card.style.setProperty("--ry",((e.clientX-r.left)/r.width-.5)*3+"deg");card.style.setProperty("--rx",((e.clientY-r.top)/r.height-.5)*-3+"deg")});
+      card.addEventListener("pointerleave",()=>{card.style.setProperty("--rx","0deg");card.style.setProperty("--ry","0deg")});
+    }
+  });
 }
 renderProjects();
 
@@ -35,6 +44,13 @@ document.querySelectorAll(".dialog-close").forEach(btn=>btn.addEventListener("cl
 document.querySelectorAll("dialog").forEach(d=>d.addEventListener("click",e=>{if(e.target===d)d.close()}));
 document.querySelector('[data-open="projects"]').addEventListener("click",()=>document.querySelector("#projects").scrollIntoView({behavior:"smooth"}));
 document.querySelector('[data-open="about"]').addEventListener("click",()=>document.querySelector("#noteDialog").showModal());
+const deskScene=document.querySelector(".desk-scene");
+document.querySelector(".moon").addEventListener("click",()=>{
+  deskScene.classList.remove("wish-made");
+  void deskScene.offsetWidth;
+  deskScene.classList.add("wish-made");
+  window.setTimeout(()=>deskScene.classList.remove("wish-made"),2600);
+});
 
 const toggleEvening=()=>{document.body.classList.toggle("evening");localStorage.setItem("nj-evening",document.body.classList.contains("evening"))};
 document.querySelector(".lamp-toggle").addEventListener("click",toggleEvening);document.querySelector(".desk-lamp").addEventListener("click",toggleEvening);
