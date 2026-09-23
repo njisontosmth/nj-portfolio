@@ -29,7 +29,7 @@ body.evening{--cream:#211a2d;--paper:#322640;--ink:#fff8ef;--muted:#c1b6c9;--lin
 @media(max-width:620px){.wish-note{right:10px;bottom:7px}.shooting-star{left:95px}}
 
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
-.nj-character{position:absolute;z-index:2;width:325px;right:48px;bottom:128px;filter:drop-shadow(0 18px 18px rgba(43,31,61,.22));pointer-events:auto;cursor:pointer;animation:characterFloat 5s ease-in-out infinite}@keyframes characterFloat{50%{transform:translateY(-5px)}}
+.nj-character{position:absolute;z-index:6;width:325px;right:48px;bottom:128px;filter:drop-shadow(0 18px 18px rgba(43,31,61,.22));pointer-events:auto;cursor:pointer;animation:characterFloat 5s ease-in-out infinite}@keyframes characterFloat{50%{transform:translateY(-5px)}}
 @media(max-width:620px){.nj-character{width:245px;right:-4px;bottom:103px}}
 .interest-card:nth-child(1){grid-column:span 6}.interest-card:nth-child(2),.interest-card:nth-child(3){grid-column:span 3}.interest-card:nth-child(5){grid-column:span 4}.interest-making .interest-symbol{background:#738b70}
 @media(max-width:900px){.interest-card,.interest-card:nth-child(1),.interest-card:nth-child(2),.interest-card:nth-child(3),.interest-card:nth-child(5){grid-column:span 6}}
