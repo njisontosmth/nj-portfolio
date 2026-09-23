@@ -44,6 +44,10 @@ document.querySelectorAll(".dialog-close").forEach(btn=>btn.addEventListener("cl
 document.querySelectorAll("dialog").forEach(d=>d.addEventListener("click",e=>{if(e.target===d)d.close()}));
 document.querySelector('[data-open="projects"]').addEventListener("click",()=>document.querySelector("#projects").scrollIntoView({behavior:"smooth"}));
 document.querySelector('[data-open="about"]').addEventListener("click",()=>document.querySelector("#noteDialog").showModal());
+const njCharacter=document.querySelector(".nj-character");
+const openAbout=()=>document.querySelector("#about").scrollIntoView({behavior:"smooth"});
+njCharacter.addEventListener("click",openAbout);
+njCharacter.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();openAbout()}});
 const deskScene=document.querySelector(".desk-scene");
 document.querySelector(".moon").addEventListener("click",()=>{
   deskScene.classList.remove("wish-made");
