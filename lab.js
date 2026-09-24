@@ -4,13 +4,16 @@ const labProjects={
   agent:{kicker:"NEXT BUILD · AGENTIC AI",title:"Career Agent",status:"PROTOTYPE / NEXT",copy:"An AI workflow concept that will read a job description, extract requirements, compare them with real candidate experience and turn the result into a structured application plan.",doing:"Scoping V1: job-description input → requirement extraction → evidence matching → gaps and next actions.",proves:"Workflow design, structured prompting, AI product thinking and eventually API/tool integration.",links:[]},
   hairlab:{kicker:"PRODUCT CONCEPT · BEAUTY TECH",title:"HairLab — Live Colour Try-On",status:"CONCEPT",copy:"A browser-based experience imagined for trying full colour, balayage, highlights or money pieces on your own hair before committing.",doing:"Defining the smallest useful prototype: camera/image input, shade choice and clear placement modes.",proves:"Product discovery, consumer UX thinking and translating a real-world uncertainty into an interactive tool.",links:[]},
   life:{kicker:"INTERACTIVE EXPERIMENT",title:"2027 Life Simulator",status:"CONCEPT / QUEUED",copy:"Part life game, part financial planning tool: make monthly choices, react to random events and watch savings, income, freedom and life milestones change.",doing:"Designing the rules so the playful layer sits on top of sensible financial calculations rather than fake motivation.",proves:"Simulation logic, interaction design, state management and behavioural-product thinking.",links:[]},
-  brain:{kicker:"SYSTEMS · PERSONAL PRODUCTIVITY",title:"NJ Brain",status:"BUILDING",copy:"A creator-and-career operating system designed to turn too many open loops into something visible and actionable.",doing:"Refining the command-centre logic and deciding what deserves automation versus what should stay deliberately simple.",proves:"Systems thinking, dashboard logic, workflow design and designing from a lived user problem.",links:[]}
+  brain:{kicker:"SYSTEMS · PERSONAL PRODUCTIVITY",title:"NJ Brain",status:"BUILDING",copy:"A creator-and-career operating system designed to turn too many open loops into something visible and actionable.",doing:"Refining the command-centre logic and deciding what deserves automation versus what should stay deliberately simple.",proves:"Systems thinking, dashboard logic, workflow design and designing from a lived user problem.",links:[]},
+  private:{kicker:"LOCKED DRAWER · PRIVATE IDEAS",title:"Not everything leaves the lab.",status:"PRIVATE / NOT READY TO SHARE",copy:"Some experiments are deliberately kept vague while they are still being shaped. This drawer is a reminder that a portfolio can show curiosity without publishing every unfinished idea.",doing:"Experiment 01 — prototype. Experiment 02 — researching. Experiment 03 — 👀",proves:"Product discretion, idea development and knowing when not to over-share.",links:[],private:true}
 };
 const modal=document.querySelector("#projectModal"),content=document.querySelector("#modalContent");
 document.querySelectorAll("[data-project]").forEach(el=>el.addEventListener("click",()=>openLabProject(el.dataset.project)));
 function openLabProject(id){
  const p=labProjects[id]; const links=p.links.map(([label,url])=>`<a href="${url}" target="_blank" rel="noopener noreferrer">${label} ↗</a>`).join("");
- content.innerHTML=`<p class="modal-kicker">${p.kicker}</p><span class="modal-status">${p.status}</span><h2 class="modal-title">${p.title}</h2><p class="modal-copy">${p.copy}</p><div class="modal-grid"><div><h4>On the desk</h4><p>${p.doing}</p></div><div><h4>What it demonstrates</h4><p>${p.proves}</p></div></div>${links?`<div class="modal-links">${links}</div>`:""}`;
+ const versions=id==="kaggriculture"?'<div class="version-track"><span class="version-chip">v1</span><span class="version-chip">v2</span><span class="version-chip">v3</span><span class="version-chip">v4</span><span class="version-chip">v5</span><span class="version-chip">v6</span><span class="version-chip current">v7 · current</span></div>':"";
+ const secrets=p.private?'<div class="secret-grid"><div class="secret-card"><strong>Experiment 01</strong><span>prototype</span></div><div class="secret-card"><strong>Experiment 02</strong><span>researching</span></div><div class="secret-card"><strong>Experiment 03</strong><span>👀</span></div></div>':"";
+ content.innerHTML=`<p class="modal-kicker">${p.kicker}</p><span class="modal-status">${p.status}</span><h2 class="modal-title">${p.title}</h2><p class="modal-copy">${p.copy}</p><div class="modal-grid"><div><h4>On the desk</h4><p>${p.doing}</p></div><div><h4>What it demonstrates</h4><p>${p.proves}</p></div></div>${versions}${secrets}${links?`<div class="modal-links">${links}</div>`:""}`;
  modal.showModal();
 }
 document.querySelector(".modal-close").addEventListener("click",()=>modal.close());
@@ -34,5 +37,15 @@ if(guideExplore){
       room.classList.remove("touring");
       guideExplore.textContent=original;
     },4700);
+  });
+}
+
+const room=document.querySelector(".room");
+const labEntry=document.querySelector("#labEntry");
+if(room){
+  requestAnimationFrame(()=>{
+    if(labEntry)labEntry.classList.add("show");
+    window.setTimeout(()=>{room.classList.remove("booting");room.classList.add("power-on")},650);
+    window.setTimeout(()=>room.classList.remove("power-on"),2450);
   });
 }
