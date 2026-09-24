@@ -20,3 +20,19 @@ document.addEventListener("keydown",e=>{
  const keys=["1","2","3","4","5","6"]; const ids=["kaggriculture","studio","agent","hairlab","life","brain"];
  if(keys.includes(e.key)&&!modal.open)openLabProject(ids[keys.indexOf(e.key)]);
 });
+const guideExplore=document.querySelector("#guideExplore");
+if(guideExplore){
+  guideExplore.addEventListener("click",()=>{
+    const room=document.querySelector(".room");
+    if(!room)return;
+    room.classList.remove("touring");
+    void room.offsetWidth;
+    room.classList.add("touring");
+    const original=guideExplore.textContent;
+    guideExplore.textContent="Those six things ✦";
+    window.setTimeout(()=>{
+      room.classList.remove("touring");
+      guideExplore.textContent=original;
+    },4700);
+  });
+}
