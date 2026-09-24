@@ -9,14 +9,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260923-restore" />
+  <link rel="stylesheet" href="styles.css?v=20260924-lab" />
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
   <header class="topbar">
     <a class="brand" href="#home" aria-label="NJ home"><span class="brand-dot"></span>NJ</a>
     <nav aria-label="Main navigation">
-      <a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#interests">Interests</a><a href="#contact">Contact</a>
+      <a href="#about">About</a><a href="#projects">Projects</a><a href="lab.html">Lab ✦</a><a href="#experience">Experience</a><a href="#interests">Interests</a><a href="#contact">Contact</a>
     </nav>
     <button class="lamp-toggle" type="button" aria-label="Toggle evening mode" title="Turn the desk lamp on or off"><span>☼</span></button>
   </header>
@@ -85,6 +85,17 @@
           <button class="filter" data-filter="ai">AI</button>
         </div>
         <div id="projectGrid" class="project-grid"></div>
+      </div>
+    </section>
+
+
+    <section class="lab-invite section-shell reveal" style="padding:0 0 105px">
+      <div style="position:relative;overflow:hidden;padding:42px;border-radius:30px;background:linear-gradient(135deg,#2b1f3d,#58416f);color:#fff8ef;box-shadow:0 22px 55px rgba(55,38,76,.18)">
+        <p class="eyebrow" style="color:#d7c5fa;margin-bottom:14px">NEW / ENTER THE PROJECT LAB</p>
+        <h2 style="font-size:clamp(36px,4vw,56px);max-width:760px">Some projects belong in cards.<br><em style="color:#f2a6c4">Some belong in a room.</em></h2>
+        <p style="max-width:670px;color:#d9cedf;margin:18px 0 25px">Explore the experiments, systems and half-formed ideas on my desk — from Kaggriculture and Pretty Useful Studio to the prototypes I’m building next.</p>
+        <a class="button primary" href="lab.html" style="background:#fff8ef;color:#2b1f3d;box-shadow:0 9px 0 rgba(242,166,196,.32)">Enter NJ’s Project Lab <span>→</span></a>
+        <span aria-hidden="true" style="position:absolute;right:7%;top:14%;font:700 120px Fraunces;color:rgba(255,255,255,.07)">✦</span>
       </div>
     </section>
 
@@ -181,6 +192,6 @@
   <dialog id="projectDialog" class="project-dialog"><button class="dialog-close" aria-label="Close">×</button><div id="dialogContent"></div></dialog>
   <dialog id="noteDialog" class="note-dialog"><button class="dialog-close" aria-label="Close">×</button><div><p class="eyebrow">A NOTE FROM THE DESK</p><h2>I’m not one neat job title.</h2><p>I’m at my best where analysis, organisation and creative curiosity overlap. This space is a record of me following those connections—and turning them into things you can actually see and use.</p><span class="signature">— NJ ✦</span></div></dialog>
 
-  <script src="script.js?v=20260923-restore"></script>
+  <script src="script.js?v=20260924-lab"></script>
 </body>
 </html>
