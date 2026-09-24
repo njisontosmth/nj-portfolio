@@ -48,3 +48,24 @@
 .secret-card strong{display:block;font:700 15px "Fraunces";margin-bottom:5px}.secret-card span{font-size:9px;color:#74697a}
 @media(max-width:900px){.kag-metrics{left:270px}.currently-building{left:525px}}
 @media(max-width:680px){.kag-metrics{left:300px;bottom:424px}.currently-building{left:565px;bottom:179px}.secret-grid{grid-template-columns:1fr}}
+
+/* v4 — visible mascot placements */
+.mascot{position:absolute;z-index:22;object-fit:contain;filter:drop-shadow(0 16px 18px rgba(33,22,40,.28));pointer-events:none;user-select:none}
+.mascot-guide{right:0;bottom:0;width:150px;max-height:220px;object-position:bottom}
+.lab-guide .mascot-guide{position:absolute}
+.mascot-working{left:565px;bottom:170px;width:138px;transform:scaleX(-1) rotate(-2deg);opacity:.98}
+.mascot-analytics{left:170px;bottom:220px;width:135px;transform:rotate(2deg);opacity:.97}
+.mascot-private{right:118px;bottom:105px;width:105px;transform:rotate(4deg);opacity:.94;transition:.25s}
+.desk:hover .mascot-private{transform:translateY(-8px) rotate(1deg);opacity:1}
+.room.booting .mascot{opacity:0!important}
+.room.power-on .mascot-analytics{animation:stationOn .42s .48s ease both}
+.room.power-on .mascot-working{animation:stationOn .42s .64s ease both}
+.room.power-on .mascot-private{animation:stationOn .42s .96s ease both}
+@media(max-width:900px){
+  .mascot-working{left:485px}.mascot-analytics{left:135px}.mascot-private{right:88px}
+}
+@media(max-width:680px){
+  .mascot-working{left:515px;bottom:150px;width:120px}
+  .mascot-analytics{left:150px;bottom:195px;width:118px}
+  .mascot-private{right:85px;bottom:87px;width:92px}
+}
