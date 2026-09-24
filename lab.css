@@ -53,7 +53,7 @@
 .mascot{position:absolute;z-index:22;object-fit:contain;filter:drop-shadow(0 16px 18px rgba(33,22,40,.28));pointer-events:none;user-select:none}
 .mascot-guide{right:0;bottom:0;width:150px;max-height:220px;object-position:bottom}
 .lab-guide .mascot-guide{position:absolute}
-.mascot-working{left:565px;bottom:170px;width:138px;transform:scaleX(-1) rotate(-2deg);opacity:.98}
+.mascot-working{left:565px;bottom:170px;width:138px;transform:rotate(-2deg);opacity:.98}
 .mascot-analytics{left:170px;bottom:220px;width:135px;transform:rotate(2deg);opacity:.97}
 .mascot-private{right:118px;bottom:105px;width:105px;transform:rotate(4deg);opacity:.94;transition:.25s}
 .desk:hover .mascot-private{transform:translateY(-8px) rotate(1deg);opacity:1}
