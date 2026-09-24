@@ -69,3 +69,6 @@
   .mascot-analytics{left:150px;bottom:195px;width:118px}
   .mascot-private{right:85px;bottom:87px;width:92px}
 }
+
+/* emergency private mascot fix */
+.mascot-private{display:none!important}
