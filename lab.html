@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NJ's Project Lab — an interactive room of live builds, experiments and ideas in motion." />
+  <meta name="theme-color" content="#241a31" />
+  <title>NJ's Project Lab — Ideas in Motion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="lab.css?v=20260924-1" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="lab-topbar">
+    <a class="back-link" href="index.html#projects">← Back to portfolio</a>
+    <div class="lab-brand"><span></span>NJ / PROJECT LAB</div>
+    <button id="lightToggle" class="light-toggle" type="button" aria-label="Toggle lab lighting">☼</button>
+  </header>
+
+  <main>
+    <section class="lab-intro">
+      <p class="eyebrow">EXPERIMENTAL ROOM / 01:29 AM ENERGY</p>
+      <h1>Welcome to the room where<br><em>unfinished ideas are allowed to breathe.</em></h1>
+      <p>Click around. Some things are shipped, some are being tested, and some are only beginning to become real.</p>
+      <div class="legend"><span><i class="dot live"></i> live / active</span><span><i class="dot build"></i> building</span><span><i class="dot idea"></i> prototype</span></div>
+    </section>
+
+    <section class="room-shell" aria-label="Interactive project lab">
+      <div class="room">
+        <div class="ceiling-glow"></div>
+        <div class="window">
+          <span class="moon">✦</span><i></i><i></i><i></i>
+          <div class="city"><b></b><b></b><b></b><b></b><b></b></div>
+        </div>
+
+        <div class="poster poster-one">IDEAS<br><strong>IN MOTION</strong><small>not perfection</small></div>
+        <div class="poster poster-two">make it<br><strong>useful</strong> ✦</div>
+
+        <button class="object monitor" data-project="kaggriculture" aria-label="Open Kaggriculture project">
+          <span class="screen"><small>KAGGRICULTURE // LIVE</small><strong>AGENT_07</strong><em>profit ↑ growth ↑</em><i class="scan"></i></span>
+          <span class="stand"></span>
+          <span class="object-label">Kaggriculture</span>
+        </button>
+
+        <button class="object folder" data-project="studio" aria-label="Open Pretty Useful Studio project">
+          <span class="tab">PUS</span><strong>Pretty<br>Useful</strong><small>STUDIO</small>
+          <span class="object-label">Pretty Useful Studio</span>
+        </button>
+
+        <button class="object robot" data-project="agent" aria-label="Open Career Agent prototype">
+          <span class="antenna"></span><span class="head"><i></i><i></i><b></b></span><span class="body">AI</span>
+          <span class="object-label">Career Agent</span>
+        </button>
+
+        <button class="object mirror" data-project="hairlab" aria-label="Open HairLab concept">
+          <span class="mirror-glass"><i></i></span><span class="mirror-base"></span>
+          <span class="swatches"><i></i><i></i><i></i></span>
+          <span class="object-label">HairLab</span>
+        </button>
+
+        <button class="object crystal" data-project="life" aria-label="Open 2027 Life Simulator concept">
+          <span class="orb"><i>2027</i><b>✦</b></span><span class="crystal-base"></span>
+          <span class="object-label">2027 Simulator</span>
+        </button>
+
+        <button class="object sketchbook" data-project="brain" aria-label="Open NJ Brain project">
+          <span class="rings"></span><strong>NJ<br>BRAIN</strong><small>systems for a noisy mind</small>
+          <span class="object-label">NJ Brain</span>
+        </button>
+
+        <div class="plant"><i></i><i></i><i></i><span></span></div>
+        <div class="desk"><span class="drawer"></span><i class="knob"></i></div>
+        <div class="rug"></div>
+
+        <p class="room-hint">Hover to find things. Click anything that looks suspicious. ✦</p>
+      </div>
+    </section>
+
+    <section class="lab-note">
+      <p class="eyebrow">THE POINT OF THIS ROOM</p>
+      <h2>I don't only collect finished projects.<br><em>I collect evidence of how I think.</em></h2>
+      <p>The lab shows the messy middle: experiments, versions, abandoned assumptions, tiny wins and ideas that may become something bigger.</p>
+    </section>
+  </main>
+
+  <dialog id="projectModal">
+    <button class="modal-close" type="button" aria-label="Close project">×</button>
+    <div id="modalContent"></div>
+  </dialog>
+
+  <script src="lab.js?v=20260924-1"></script>
+</body>
+</html>
