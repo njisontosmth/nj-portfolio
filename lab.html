@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="lab.css?v=20260924-2" />
+  <link rel="stylesheet" href="lab.css?v=20260924-3" />
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -21,9 +21,9 @@
 
   <main>
     <section class="lab-intro">
-      <p class="eyebrow">EXPERIMENTAL ROOM / 01:29 AM ENERGY</p>
+      <p class="eyebrow">IDEAS IN MOTION / LIVE WORKBENCH</p>
       <h1>Welcome to the room where<br><em>unfinished ideas are allowed to breathe.</em></h1>
-      <p>Click around. Some things are shipped, some are being tested, and some are only beginning to become real.</p>
+      <p>These are not finished ideas. They’re ideas in motion. Click around — some things are shipped, some are being tested, and some are only beginning to become real.</p>
       <div class="legend"><span><i class="dot live"></i> live / active</span><span><i class="dot build"></i> building</span><span><i class="dot idea"></i> prototype</span></div>
     </section>
 
@@ -35,7 +35,11 @@
     </section>
 
     <section class="room-shell" aria-label="Interactive project lab">
-      <div class="room">
+      <div class="lab-entry" id="labEntry" aria-hidden="true">
+        <span>POWERING UP NJ / PROJECT LAB</span>
+        <strong>Ideas in motion.</strong>
+      </div>
+      <div class="room booting">
         <div class="ceiling-glow"></div>
 
         <div class="lab-guide" id="labGuide">
@@ -55,13 +59,17 @@
         <div class="poster poster-one">IDEAS<br><strong>IN MOTION</strong><small>not perfection</small></div>
         <div class="poster poster-two">make it<br><strong>useful</strong> ✦</div>
 
-        <button class="object monitor" data-project="kaggriculture" aria-label="Open Kaggriculture project">
-          <span class="screen"><small>KAGGRICULTURE // LIVE</small><strong>AGENT_07</strong><em>profit ↑ growth ↑</em><i class="scan"></i></span>
+        <button class="object monitor featured-object" data-project="kaggriculture" aria-label="Open Kaggriculture project">
+          <span class="screen"><small>KAGGRICULTURE // ACTIVE</small><strong>AGENT_07</strong><em>iterate → test → improve</em><i class="scan"></i></span>
           <span class="stand"></span>
           <span class="object-label">Kaggriculture</span>
         </button>
+        <div class="kag-metrics" aria-hidden="true">
+          <span>ACTIVE BUILD</span><strong>V7</strong><small>strategy agent</small>
+          <i></i><i></i><i></i><i></i>
+        </div>
 
-        <button class="object folder" data-project="studio" aria-label="Open Pretty Useful Studio project">
+        <button class="object folder featured-object" data-project="studio" aria-label="Open Pretty Useful Studio project">
           <span class="tab">PUS</span><strong>Pretty<br>Useful</strong><small>STUDIO</small>
           <span class="object-label">Pretty Useful Studio</span>
         </button>
@@ -88,9 +96,14 @@
         </button>
 
         <div class="plant"><i></i><i></i><i></i><span></span></div>
-        <div class="desk"><span class="drawer"></span><i class="knob"></i></div>
+        <div class="desk">
+          <button class="private-drawer" data-project="private" aria-label="Open private ideas drawer">
+            <span class="drawer-front"><i class="knob"></i><b>PRIVATE</b><em>♡</em></span>
+          </button>
+        </div>
         <div class="rug"></div>
 
+        <div class="currently-building" aria-hidden="true"><span></span>CURRENTLY BUILDING</div>
         <p class="room-hint">Hover to find things. Click anything that looks suspicious. ✦</p>
       </div>
     </section>
@@ -107,6 +120,6 @@
     <div id="modalContent"></div>
   </dialog>
 
-  <script src="lab.js?v=20260924-2"></script>
+  <script src="lab.js?v=20260924-3"></script>
 </body>
 </html>
